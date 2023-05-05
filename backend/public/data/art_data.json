@@ -1,0 +1,26 @@
+[
+    {
+      "artwork_name": "Starry Night",
+      "artist_name": "Vincent van Gogh",
+      "date_of_creation": "1889",
+      "art_style": "Post-Impressionism",
+      "dimensions": "73.7 cm x 92.1 cm",
+      "significance_history": "Depicts the view outside Van Gogh's sanatorium room window at Saint-Paul-de-Mausole, just before sunrise."
+    },
+    {
+      "artwork_name": "Guernica",
+      "artist_name": "Pablo Picasso",
+      "date_of_creation": "1937",
+      "art_style": "Cubism",
+      "dimensions": "349 cm x 776 cm",
+      "significance_history": "Depicts the bombing of Guernica by German and Italian warplanes during the Spanish Civil War."
+    },
+    {
+      "artwork_name": "Mona Lisa",
+      "artist_name": "Leonardo da Vinci",
+      "date_of_creation": "1503-1519",
+      "art_style": "Renaissance",
+      "dimensions": "77 cm x 53 cm",
+      "significance_history": "Considered one of the most famous and iconic artworks in the world."
+    }
+  ]

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Resume</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css" integrity="sha512-YyZNx/RsOcU6e4U6/QG+M+hIb6T+umJInaS+GKjF7Qy0J22uV7QbIg8uV7q3H/LJwVIBonapRd8lK/BxU/XUKQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<body>
+    <header class="container">
+        <h1 class="text-center">Hiral Pandya</h1>
+        <h2 class="text-center">Web Developer</h2>
+        <p class="text-center">I work on software!</p>
+    </header>
+
+    <nav class="container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container my-5">
+        <img src="profile.jpg" alt="Profile Picture" class="img-fluid rounded-circle">
+        <p class="lead mt-3">"Everyone must choose one of two pains: The pain of discipline or the pain of regret"</p>
+    </div>
+
+    <section id="about" class="container">
+        <h2 class="mb-4">About Me</h2>
+        <p class="lead">I am a creative and ambitious web developer with a passion for coding and designing beautiful, user-friendly websites. With over 5 years of experience in web development, I have gained a strong understanding of HTML, CSS, JavaScript, and PHP. I am constantly learning and improving my skills to keep up with the latest trends and technologies in web development.</p>
+    </section> 
+
+    <section id="experience" class="container">
+        <h2 class="mb-4">Experience</h2>
+        <ul class="list-unstyled">
+            <li><strong>Web Developer</strong> - ABC Company (2019-Present)</li>
+            <li><strong>Web Designer</strong> - XYZ Agency (2017-2019)</li>
+            <li><strong>Front-End Developer</strong> - DEF Inc. (2015-2017)</li>
+        </ul>
+    </section>
+
+    <section id="education" class="container">
+        <h2 class="mb-4">Education</h2>
+        <ul class="list-unstyled">
+            <li><strong>Bachelor's in Computer Science</strong> - University of XYZ (2019)</li>
+            <li><strong>Masters' in Computer Science</strong> - University of Newhaven(2023)</li>
+        </ul>
+    </section>
+
+	<section id="courses" class="container">
+        <h2 class="mb-4">Courses</h2>
+        <ul class="list-unstyled">
+            <li><strong>JPython</strong> </li>
+            <li><strong>JavaScript Fundamentals</strong> </li>
+            <li><strong>Responsive Web Design</strong> </li>
+            <li><strong>PHP Basics</strong> </li>
+        </ul>
+    </section>
+
+    <section id="contact" class="container">
+        <h2 class="mb-4">Contact Me</h2>
+        <form action="submit-form.php" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="message" class="form-label">Message:</label>
+                <textarea id="message" name="message" class="form-control" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </section>
+
+    <footer class="container py-3">
+        <ul class="list-unstyled d-flex justify-content-center">
+            <li class="me-3"><a href="https://www.linkedin.com/in/pandya-hiral/" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a></li>
+        </ul>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-rpE8rtrG5y5ir5l9jMJYR/cfNN5SYtZE5aFy1Hj2cJh8xv3q2QHJiZu+a7V3IjOu8JHhufpqz+vcFyLxMz/Hjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js" integrity="sha512-CJS4P/g4L/9J+8ZwoIWpOvSj+EeJ1gTw8KyQ2V7v4P4THcV7M9HntMnVxPTaSwh66cc1dLjyglF75z7bqggwtg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
+
