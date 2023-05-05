@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm install -f && nodemon app.js -f",
     "dev": "npm install -f && nodemon app.js -f",
-    "build":"npm i && node app.js",
+    "build":"node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
