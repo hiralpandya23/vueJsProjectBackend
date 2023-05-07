@@ -1,34 +1,49 @@
-const express = require("express");
-const router = express.Router();
 const Artwork = require("../models/Artwork");
+const { parse } = require('url');
+const { StringDecoder } = require('string_decoder');
+const decoder = new StringDecoder('utf-8');
 
-// Get all artworks
-router.get("/", async (req, res) => {
-  try {
-    const artworks = await Artwork.find({});
-    res.json(artworks);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
+const handler = async (req, res) => {
+  const { pathname } = parse(req.url, true);
 
-// Add new artwork
-router.post("/", async (req, res) => {
-  const artwork = new Artwork({
-    artwork_name: req.body.artwork_name,
-    artist_name: req.body.artist_name,
-    date_of_creation: req.body.date_of_creation,
-    art_style: req.body.art_style,
-    dimensions: req.body.dimensions,
-    significance_history: req.body.significance_history
-  });
+  if (req.method === 'GET' && pathname === '/api/artworks') {
+    try {
+      const artworks = await Artwork.find({});
+      res.setHeader('Content-Type', 'application/json');
+      res.statusCode = 200;
+      res.end(JSON.stringify(artworks));
+    } catch (err) {
+      res.statusCode = 500;
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify({ message: err.message }));
+    }
+  } else if (req.method === 'POST' && pathname === '/api/artworks') {
+    let body = '';
+    req.on('data', (data) => {
+      body += decoder.write(data);
+    });
 
-  try {
-    const newArtwork = await artwork.save();
-    res.status(201).json(newArtwork);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
+    req.on('end', async () => {
+      body += decoder.end();
+      const artwork = new Artwork(JSON.parse(body));
+      try {
+        const newArtwork = await artwork.save();
+        res.statusCode = 201;
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify(newArtwork));
+      } catch (err) {
+        res.statusCode = 400;
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify({ message: err.message }));
+      }
+    });
+  } else {
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({
+      message: 'Route not found' }));
+      }
+      };
+      
+      module.exports = handler;
 
-module.exports = router;
